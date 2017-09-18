@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-12">
           <div>
-            <a class="waves-effect waves-light btn" style="width:100%">Add contact</a>
+            <button data-target="addContactModal" class="waves-effect waves-light btn" style="width:100%">Add Contact</button>
           </div>
           <table class="striped">
             <thead class="grey">
@@ -51,13 +51,39 @@
                 <td class="lastname"> {{ contact.lastname }}</td>
                 <td class="phone"> {{ contact.phone }}</td>
                 <td class="email"> {{ contact.email }}</td>
-
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="addContactModal" class="modal">
+    <form action="php/addContact.php" method="post">
+      <h4>Add Item</h4>
+      <div class="row">
+        <div class="input-field col s6 m6 l6">
+          <input id="firstname" type="text" name="Contact[firstname]" class="validate">
+          <label for="firstname" data-success="You did it!">Firstname</label>
+        </div>
+        <div class="input-field col s6 m6 l6">
+          <input id="lastname" type="text" name="Contact[lastname]" class="validate">
+          <label for="lastname" data-success="You did it!">Lastname</label>
+        </div>
+        <div class="input-field col s6 m6 l6">
+          <input id="phone" type="number" name="Contact[phone]" class="validate">
+          <label for="phone" data-success="You did it!">Phone</label>
+        </div>
+        <div class="input-field col s6 m6 l6">
+          <input id="email" type="email" name="Contact[email]" class="validate">
+          <label for="email" data-success="You did it!">Email</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn waves-effect waves-light start-btn" type="submit" name="action">Add</button>
+      </div>
+    </form>
   </div>
 
   <script src="js/app.js"></script>
