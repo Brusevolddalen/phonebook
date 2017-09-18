@@ -21,11 +21,11 @@ else{
   $result_create_table = $db->query($sql);
 
   if (!$result_create_table) {
-    echo $sql;
+    echo mysql_errno($sql) . ": " . mysql_error($sql) . "\n";
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    echo mysql_errno($sql) . ": " . mysql_error($sql) . "\n";
+    echo "table created!";
   }
 }
 
