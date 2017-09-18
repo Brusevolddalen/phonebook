@@ -33,7 +33,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <table>
+          <div>
+            <a class="waves-effect waves-light btn" style="width:100%">Add contact</a>  
+          </div>
+          <table class="striped">
             <thead class="grey">
               <tr>
                 <th>First Name</th>
@@ -42,14 +45,15 @@
                 <th>Email-adress</th>
               </tr>
             </thead>
-            <div ng-repeat="contact in contacts">
-              <tbody>
-                <tr class="firstname"> {{ contact.firstname }} </tr>
-                <tr class="lastname"> {{ contact.lastname }} </tr>
-                <tr class="phone"> {{ contact.phone }} </tr>
-                <tr class="email"> {{ contact.email }} </tr>
-              </tbody>
-            </div>
+            <tbody>
+              <tr ng-repeat="contact in contacts">
+                <td class="firstname"> {{ contact.firstname }}</td>
+                <td class="lastname"> {{ contact.lastname }}</td>
+                <td class="phone"> {{ contact.phone }}</td>
+                <td class=""> {{ contact.email }}</td>
+
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
