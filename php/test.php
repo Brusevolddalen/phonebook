@@ -10,7 +10,7 @@ if ($db->connect_error) {
 else{
 
   echo "connected";
-
+/*
   $sql = "CREATE TABLE Contacts (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
@@ -19,15 +19,18 @@ else{
     email VARCHAR(50),
     date_added TIMESTAMP
   )";
+*/
+  $sql = "INSERT INTO Contacts (firstname, lastname, phone, email)
+  VALUES ('Larry', 'Bird', '48424546', 'john@example.com')";
 
-  $result_create_table = $db->query($sql);
+  $result_insert_into = $db->query($sql);
 
-  if (!$result_create_table) {
+  if (!$result_insert_into) {
     echo $db->error;
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    echo "table created!";
+    echo "inserted into!";
   }
 }
 
