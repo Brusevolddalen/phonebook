@@ -20,17 +20,16 @@ else{
     date_added TIMESTAMP
   )";
 */
-  $sql = "INSERT INTO Contacts (firstname, lastname, phone, email)
-  VALUES ('Larry', 'Bird', '48424546', 'john@example.com')";
+  $sql = "SELECT * FROM Contacts";
 
-  $result_insert_into = $db->query($sql);
+  $result_select_all = $db->query($sql);
 
-  if (!$result_insert_into) {
+  if (!$result_select_all) {
     echo $db->error;
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    echo "inserted into!";
+    print_r($result_select_all);
   }
 }
 
