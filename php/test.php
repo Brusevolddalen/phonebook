@@ -25,7 +25,7 @@ else{
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    echo "table created!";
+    echo mysql_errno($sql) . ": " . mysql_error($sql) . "\n";
   }
 }
 
