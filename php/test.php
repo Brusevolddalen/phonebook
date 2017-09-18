@@ -29,7 +29,9 @@ else{
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    print_r($result_select_all);
+    while ( $rows = $result_select_all->fetch_assoc() ) {
+      print_r($rows);//echo "{$row['field']}";
+    }
   }
 }
 
