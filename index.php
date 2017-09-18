@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-12">
           <div>
-            <a class="waves-effect waves-light btn" style="width:100%">Add contact</a>  
+            <a class="waves-effect waves-light btn" style="width:100%">Add contact</a>
           </div>
           <table class="striped">
             <thead class="grey">
