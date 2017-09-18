@@ -9,6 +9,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="js/loadModal.js"></script>
 
 
 
@@ -87,7 +88,7 @@
   </div>
 
 
-  <script src="js/loadModal.js"></script>
+
   <script src="js/app.js"></script>
   <script src="js/controllers/MainController.js"></script>
 
