@@ -3,9 +3,15 @@
 
 <head>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <!--Import main.css-->
-  <link href="css/main.css" media="screen,projection" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+
 
   <!--Let browser know website is optimized for mobile-->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -16,17 +22,45 @@
   </title>
 </head>
 
-  <body >
-    <h2>TEST</h2>
-    asd
+<body ng-app="myApp">
+  <div class="header">
+    <div class="container">
+      <h1>Phonebook!</h1>
+    </div>
+  </div>
+
+  <div class="main" ng-controller="MainController">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <table>
+            <thead class="grey">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phonenumber</th>
+                <th>Email-adress</th>
+              </tr>
+            </thead>
+            <div ng-repeat="contact in contacts">
+              <tbody>
+                <tr class="firstname"> {{ contact.firstname }} </tr>
+                <tr class="lastname"> {{ contact.lastname }} </tr>
+                <tr class="phone"> {{ contact.phone }} </tr>
+                <tr class="email"> {{ contact.email }} </tr>
+              </tbody>
+            </div>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers/MainController.js"></script>
 
 
 
-    <!--Import jQuery before materialize.js-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-  </body>
+</body>
 
 </html>
