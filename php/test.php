@@ -8,8 +8,8 @@ if ($db->connect_error) {
 	echo $db->connect_error;
 }
 else{
-  /*
-  $sql = "CREATE TABLE MyGuests (
+
+  $sql = "CREATE TABLE Contacts (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
@@ -17,18 +17,15 @@ else{
     email VARCHAR(50),
     date_added TIMESTAMP
   )";
-  */
 
-  $sql = "DROP TABLE MyGuests";
+  $result_create_table = $db->query($sql);
 
-  $result_drop_table = $db->query($sql);
-
-  if (!$result_drop_table) {
+  if (!$result_create_table) {
     echo $sql;
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    echo "table dropped!";
+    echo "table created!";
   }
 }
 
