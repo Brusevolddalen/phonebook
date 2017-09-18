@@ -50,7 +50,7 @@
                 <td class="firstname"> {{ contact.firstname }}</td>
                 <td class="lastname"> {{ contact.lastname }}</td>
                 <td class="phone"> {{ contact.phone }}</td>
-                <td class=""> {{ contact.email }}</td>
+                <td class="email"> {{ contact.email }}</td>
 
               </tr>
             </tbody>
