@@ -23,7 +23,7 @@ else{
   $result_create_table = $db->query($sql);
 
   if (!$result_create_table) {
-    echo $mysqli->error;
+    echo $db->error;
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
