@@ -22,7 +22,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
       $http.post("php/deleteContact.php", JSON.stringify(phone))
       .then(function(response) {
-        console.log("should have deleted");
+        console.log(response.data);
+        console.log(response.status);
       }, function(response) {
         console.log("not deleted");
       });
