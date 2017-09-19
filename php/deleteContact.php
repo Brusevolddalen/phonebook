@@ -12,6 +12,9 @@ else{
 
   $phoneNumber = $_POST['phoneNumber'];
 
+  $phoneNumber = preg_replace('/\s+/', '', $phoneNumber);
+
+
 
   $sql = "DELETE FROM Contacts WHERE phone = '$phoneNumber'";
 
