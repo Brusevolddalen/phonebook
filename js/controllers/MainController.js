@@ -29,7 +29,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           }
         })
         .then(function(response) {
-          console.log(response.data);
+          $scope.getContacts();
         });
 
     });
