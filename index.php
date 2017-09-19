@@ -53,7 +53,7 @@
                 <td class="lastname"> {{ contact.lastname }}</td>
                 <td class="phone"> {{ contact.phone }}</td>
                 <td class="email"> {{ contact.email }}</td>
-                <td class="delete" > <button class="btn material-icons delete-btn" ng-click="deleteContact()">delete</button> </td>
+                <td class="delete" > <button class="btn material-icons delete-btn" ng-click="deleteContact(phone)">delete</button> </td>
               </tr>
             </tbody>
           </table>

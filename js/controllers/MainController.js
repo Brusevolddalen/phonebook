@@ -12,7 +12,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
       $scope.contacts = data;
     });
 
-  $scope.deleteContact = function() {
+  $scope.deleteContact = function(phone) {
 
     $(document).on('click', '.delete-btn', function(event) {
 
@@ -20,7 +20,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
       let tds = row.find("td"); // Finds all children <td> elements
       let phone = $(tds[2]).text();
 
-      $http.post("php/deleteContact.php", phone)
+      $http.post("php/deleteContact.php", JSON.stringify(phone))
       .then(function(response) {
         console.log("should have deleted");
       }, function(response) {
