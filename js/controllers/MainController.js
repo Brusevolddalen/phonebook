@@ -16,6 +16,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
   $scope.addContact = function() {
 
     $(document).on('click', '.add-btn', function(event) {
+      console.log("clicked");
 
       $http({
           url: 'php/addContact.php',
