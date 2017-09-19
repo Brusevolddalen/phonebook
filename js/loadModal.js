@@ -10,7 +10,7 @@ $(document).ready(function() {
       height: "10%",
     }
   );
-  $('.add-btn').closeModal({
-    dismissible: true
-  });
+
+  $('.add-btn').modal('close');
+
 });
