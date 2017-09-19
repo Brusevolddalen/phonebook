@@ -18,14 +18,14 @@ else{
 
   $result_delete_contact = $db->query($sql);
 
-  echo $sql;
+
 
   if (!$result_delete_contact) {
     echo $db->error;
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    header('Location: https://martin-phonebook.herokuapp.com/');
+    echo $sql;
   }
 }
 
