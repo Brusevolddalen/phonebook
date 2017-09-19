@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <div id="addContactModal" class="modal">
+  <div id="addContactModal" class="modal" ng-controller="MainController">
     <form>
       <div id="editTableContainer" class="modal-content">
       <h4>Add Contact</h4>
