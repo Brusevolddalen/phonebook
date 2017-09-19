@@ -36,6 +36,9 @@ else{
     echo $db->error;
       //"<script>alert('Error 4 could not add category');</script>"
   }
+  else{
+    header("Refresh:0");
+  }
 }
 
 ?>
