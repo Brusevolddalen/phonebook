@@ -1,6 +1,6 @@
 app.controller('MainController', ['$scope', function($scope, $http) {
 
-  $http.get('../php/loadContacts.php').success(function(data) {
+  $http.get('/php/loadContacts.php').success(function(data) {
     $scope.contacts = data;
   });
 
