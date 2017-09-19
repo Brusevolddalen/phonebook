@@ -63,6 +63,7 @@
   </div>
 
   <div id="addContactModal" class="modal">
+    <form>
       <div id="editTableContainer" class="modal-content">
       <h4>Add Contact</h4>
       <div class="row">
@@ -87,6 +88,7 @@
         <button class="btn waves-effect waves-light add-btn" value="Add" ng-click="addContact()">Add</button>
       </div>
       </div>
+    </form>
   </div>
 
 
