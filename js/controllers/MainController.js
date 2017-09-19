@@ -12,6 +12,29 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         $scope.contacts = data;
       });
   };
+
+  $scope.addContact = function() {
+
+    $(document).on('click', '.add-btn', function(event) {
+
+      $http({
+          url: 'php/addContact.php',
+          method: "POST",
+          data: {firstname: $scope.firstname, lastname: $scope.lastname, phone: $scope.phone, email: $scope.email },
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        })
+        .then(function(response) {
+          $scope.getContacts();
+        });
+
+    });
+  };
+  $scope.getContacts();
+}]);
+
+
   $scope.deleteContact = function(phone) {
 
     $(document).on('click', '.delete-btn', function(event) {

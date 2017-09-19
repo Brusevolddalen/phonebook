@@ -63,32 +63,30 @@
   </div>
 
   <div id="addContactModal" class="modal">
-    <form action="php/addContact.php" method="post">
       <div id="editTableContainer" class="modal-content">
       <h4>Add Contact</h4>
       <div class="row">
         <div class="input-field col s6 m6 l6">
-          <input id="firstname" type="text" name="Contact[firstname]" class="validate">
+          <input id="firstname" type="text" ng-model="firstname" class="validate">
           <label for="firstname" data-success="You did it!">Firstname</label>
         </div>
         <div class="input-field col s6 m6 l6">
-          <input id="lastname" type="text" name="Contact[lastname]" class="validate">
+          <input id="lastname" type="text" ng-model="lastname" class="validate">
           <label for="lastname" data-success="You did it!">Lastname</label>
         </div>
         <div class="input-field col s6 m6 l6">
-          <input id="phone" type="number" name="Contact[phone]" class="validate">
+          <input id="phone" type="number" ng-model="phone" class="validate">
           <label for="phone" data-success="You did it!">Phone</label>
         </div>
         <div class="input-field col s6 m6 l6">
-          <input id="email" type="email" name="Contact[email]" class="validate">
+          <input id="email" type="email" ng-model="email" class="validate">
           <label for="email" data-success="You did it!">Email</label>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn waves-effect waves-light start-btn" type="submit" name="action">Add</button>
+        <button class="btn waves-effect waves-light add-btn" value="Add" ng-click="addContact()">Add</button>
       </div>
       </div>
-    </form>
   </div>
 
 

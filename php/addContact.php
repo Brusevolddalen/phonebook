@@ -12,8 +12,8 @@ if ($db->connect_error) {
 	echo $db->connect_error;
 }
 else{
+	var_dump($POST);
 
-  $contact = $_POST['Contact'];
 
 /*
   $sql = "CREATE TABLE Contacts (
@@ -25,7 +25,7 @@ else{
     date_added TIMESTAMP
   )";
 */
-
+/*
   $sql = "INSERT INTO Contacts (firstname, lastname, phone, email)
   VALUES ('$contact[firstname]', '$contact[lastname]', '$contact[phone]', '$contact[email]')";
 
@@ -39,6 +39,7 @@ else{
   else{
     header('Location: https://martin-phonebook.herokuapp.com/');
   }
+	*/
 }
 
 ?>
