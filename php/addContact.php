@@ -12,7 +12,7 @@ if ($db->connect_error) {
 	echo $db->connect_error;
 }
 else{
-	var_dump($POST);
+	var_dump($_POST);
 
 
 /*
