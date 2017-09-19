@@ -1,4 +1,11 @@
-app.controller('MainController', ['$scope', function($scope){
+app.controller('MainController', ['$scope', function($scope, $http){
+
+    $http.get("loadContacts.php")
+    .then(function (response) {$scope.contacts = response.data.records;});
+
+    console.log($scope.contacts);
+
+  /*
   $scope.contacts = [
     {
       firstname: 'Mark',
@@ -13,4 +20,5 @@ app.controller('MainController', ['$scope', function($scope){
       email: 'larry@bird.com'
     }
   ];
+  */
 }]);

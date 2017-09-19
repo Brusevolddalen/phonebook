@@ -9,30 +9,21 @@ if ($db->connect_error) {
 }
 else{
 
-  echo "connected";
-/*
-  $sql = "CREATE TABLE Contacts (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    firstname VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
-    phone VARCHAR(30) NOT NULL,
-    email VARCHAR(50),
-    date_added TIMESTAMP
-  )";
-*/
   $sql = "SELECT * FROM Contacts";
 
-  $result_select_all = $db->query($sql);
+	$rows = $db->query($sql);
+	$length = $rows->num_rows;
 
-  if (!$result_select_all) {
-    echo $db->error;
-      //"<script>alert('Error 4 could not add category');</script>"
-  }
-  else{
-    while ( $rows = $result_select_all->fetch_assoc() ) {
-      print_r($rows);//echo "{$row['field']}";
-    }
-  }
+	// empty array
+
+	$result = array();
+	for ($i = 0; $i < $length; $i++)
+		{
+		$row = $rows->fetch_assoc(); //retrieving each row
+		array_push($result, $row); //add to the array
+		}
+
+	echo json_encode($result); //convert to json and output the result
 }
 
 ?>
