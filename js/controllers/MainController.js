@@ -2,12 +2,14 @@ app.controller('MainController', ['$scope', function($scope, $http) {
 
   /*
   $http.get('/php/loadContacts.php').success(function(data) {
-    $scope.contacts = data;
+
   });
   */
   $.getJSON("php/loadContacts.php", function(data) {
 
-    console.log(data);
+    $scope.contacts = data;
+
+    console.log($scope.contacts);
   });
 
 
