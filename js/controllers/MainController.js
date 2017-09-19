@@ -24,8 +24,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
           }
         })
         .then(function(response) {
-          //$scope.getContacts();
-          console.log(response)
+          $scope.getContacts();
         });
   };
 

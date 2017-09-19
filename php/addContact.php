@@ -12,7 +12,24 @@ if ($db->connect_error) {
 	echo $db->connect_error;
 }
 else{
-	var_dump($_POST);
+
+	$postdata = file_get_contents("php://input");
+	if(isset($postdata) && !empty($postdata))
+	{
+    $request = json_decode($postdata);
+
+    $firstname = preg_replace('/[^a-zA-Z ]/','',$request->firstname);
+		$lastname = preg_replace('/[^a-zA-Z ]/','',$request->lastname);
+		$email = preg_replace('/[^a-zA-Z ]/','',$request->email);
+    $phone = preg_replace('/[^0-9 ]/','',$request->phone);
+
+
+		$sql = "INSERT INTO Contacts (firstname, lastname, phone, email)
+	  VALUES ('$firstname', '$lastname', '$phone', '$email')";
+
+    mysqli_query($db,$sql);
+	}
+
 
 
 /*
