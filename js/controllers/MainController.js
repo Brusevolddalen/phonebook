@@ -1,32 +1,43 @@
-app.controller('MainController', ['$scope', function($scope, $http) {
+app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
-  /*
-  $http.get('/php/loadContacts.php').success(function(data) {
+  $http.get('php/loadContacts.php')
+    .then(function(response) {
 
-  });
-  */
-  $.getJSON("php/loadContacts.php", function(data) {
+      var data = response.data;
+      var status = response.status;
+      var statusText = response.statusText;
+      var headers = response.headers;
+      var config = response.config;
 
-    $scope.test = data;
+      $scope.contacts = data;
+    });
 
-    console.log($scope.test);
+  $scope.deleteContact = function() {
 
-  });
+    $(document).on('click', '.delete-btn', function(event) {
+
+      let row = $(this).closest("tr"); // Finds the closest row <tr>
+      let tds = row.find("td"); // Finds all children <td> elements
+      let phone = $(tds[2]).text();
+
+      $http.post("php/deleteContact.php", phone)
+      .then(function(response) {
+        console.log(response);
+      }, function(response) {
+        console.log(response);
+      });
+
+      /*
+            $.post("php/deleteContact.php", {
+              phoneNumber: phone
+            });
+      */
+      //location.reload();
 
 
-  $scope.contacts = [
-    {
-      firstname: 'Mark',
-      lastname: 'Otto',
-      phone: '42434546',
-      email: 'mark@otto.com'
-    },
-    {
-      firstname: 'Larry',
-      lastname: 'Bird',
-      phone: '41424546',
-      email: 'larry@bird.com'
-    }
-  ];
-  console.log($scope.contacts);
+
+    });
+
+  };
+
 }]);

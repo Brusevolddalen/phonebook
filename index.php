@@ -4,7 +4,7 @@
 <head>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" type="text/javascript"></script>
@@ -23,10 +23,10 @@
   </title>
 </head>
 
-<body ng-app="myApp">
+<body class="teal cyan lighten-4" ng-app="myApp">
   <div class="header">
     <div class="container">
-      <h1>Phonebook!</h1>
+      <h1 class="center-align">Phonebook!</h1>
     </div>
   </div>
 
@@ -37,13 +37,14 @@
           <div>
             <a class="waves-effect waves-light btn modal-trigger" style="width:100%" href="#addContactModal">Add Contact</a>
           </div>
-          <table class="striped">
+          <table class="bordered centered responsive-table white">
             <thead class="grey">
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Phonenumber</th>
                 <th>Email-adress</th>
+                <th style="width:12%">Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -52,6 +53,7 @@
                 <td class="lastname"> {{ contact.lastname }}</td>
                 <td class="phone"> {{ contact.phone }}</td>
                 <td class="email"> {{ contact.email }}</td>
+                <td class="delete" > <button class="btn material-icons delete-btn" ng-click="deleteContact()">delete</button> </td>
               </tr>
             </tbody>
           </table>
@@ -93,7 +95,6 @@
 
   <script src="js/app.js"></script>
   <script src="js/controllers/MainController.js"></script>
-
 
 
 </body>
