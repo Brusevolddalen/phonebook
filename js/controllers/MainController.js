@@ -19,6 +19,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
       let row = $(this).closest("tr"); // Finds the closest row <tr>
       let tds = row.find("td"); // Finds all children <td> elements
       let phone = $(tds[2]).text();
+
       $http({
         url: 'php/deleteContact.php',
         method: "POST",
@@ -26,48 +27,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
-      }).then(function(response) {
+      })
+      .then(function(response) {
         console.log(response.data);
-
       });
-      /*
-            $http({
-              method: 'POST',
-              url: 'php/deleteContact.php',
-              data: {
-                phoneNumber: phone
-              }
-
-            }).then(function(response) {
-
-              console.log(response.data);
-
-            }, function(response) {
-
-              console.log(response.data, response.status);
-
-            });
-      */
-      /*
-            $http.post("php/deleteContact.php", JSON.stringify(phone))
-            .then(function(response) {
-              console.log(response.data);
-              console.log(JSON.stringify(phone));
-            }, function(response) {
-              console.log("not deleted");
-            });
-      */
-      /*
-            $.post("php/deleteContact.php", {
-              phoneNumber: phone
-            });
-      */
-      //location.reload();
-
-
-
+      
     });
-
   };
-
 }]);
