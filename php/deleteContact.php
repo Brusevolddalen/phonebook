@@ -25,7 +25,7 @@ else{
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    echo $sql;
+    var_dump($_POST);
   }
 }
 
