@@ -20,14 +20,32 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
       let tds = row.find("td"); // Finds all children <td> elements
       let phone = $(tds[2]).text();
 
-      $http.post("php/deleteContact.php", JSON.stringify(phone))
-      .then(function(response) {
+      $http({
+        method: 'POST',
+        url: 'php/deleteContact.php',
+        data: {
+          phoneNumber: phone
+        }
+
+      }).then(function(response) {
+
         console.log(response.data);
-        console.log(response.status);
+
       }, function(response) {
-        console.log("not deleted");
+
+        console.log(response.data, response.status);
+
       });
 
+      /*
+            $http.post("php/deleteContact.php", JSON.stringify(phone))
+            .then(function(response) {
+              console.log(response.data);
+              console.log(JSON.stringify(phone));
+            }, function(response) {
+              console.log("not deleted");
+            });
+      */
       /*
             $.post("php/deleteContact.php", {
               phoneNumber: phone
