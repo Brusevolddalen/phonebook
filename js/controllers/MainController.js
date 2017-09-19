@@ -18,7 +18,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
       $http({
           url: 'php/addContact.php',
           method: "POST",
-          data: {newFirstname: $scope.newFirstname, newLastname: $scope.newLastname, newPhone: $scope.newPhone, newEmail: $scope.newEmail },
+          data: {firstname: $scope.firstname, lastname: $scope.lastname, newPhone: $scope.phone, newEmail: $scope.email },
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           }

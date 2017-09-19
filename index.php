@@ -66,19 +66,19 @@
         <h4>Add Contact</h4>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <input id="firstname" type="text" ng-model="newFirstname" class="validate">
+            <input id="firstname" type="text" ng-model="firstname" class="validate">
             <label for="firstname" data-success="You did it!">Firstname</label>
           </div>
           <div class="input-field col s6 m6 l6">
-            <input id="lastname" type="text" ng-model="newLastname" class="validate">
+            <input id="lastname" type="text" ng-model="lastname" class="validate">
             <label for="lastname" data-success="You did it!">Lastname</label>
           </div>
           <div class="input-field col s6 m6 l6">
-            <input id="phone" type="number" ng-model="newPhone" class="validate">
+            <input id="phone" type="number" ng-model="phone" class="validate">
             <label for="phone" data-success="You did it!">Phone</label>
           </div>
           <div class="input-field col s6 m6 l6">
-            <input id="email" type="email" ng-model="newEmail" class="validate">
+            <input id="email" type="email" ng-model="email" class="validate">
             <label for="email" data-success="You did it!">Email</label>
           </div>
         </div>
