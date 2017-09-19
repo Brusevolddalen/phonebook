@@ -37,7 +37,7 @@ else{
       //"<script>alert('Error 4 could not add category');</script>"
   }
   else{
-    header("Refresh:0");
+    header('Refresh: 1; url=index.php');
   }
 }
 
