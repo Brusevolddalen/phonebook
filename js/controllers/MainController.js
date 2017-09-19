@@ -7,15 +7,13 @@ app.controller('MainController', ['$scope', function($scope, $http) {
   */
   $.getJSON("php/loadContacts.php", function(data) {
 
-    $scope.contacts = data;
+    $scope.test = data;
 
-    console.log($scope.contacts[0]);
+    console.log($scope.test);
 
   });
 
 
-
-  /*
   $scope.contacts = [
     {
       firstname: 'Mark',
@@ -30,5 +28,5 @@ app.controller('MainController', ['$scope', function($scope, $http) {
       email: 'larry@bird.com'
     }
   ];
-  */
+  console.log($scope.contacts);
 }]);
