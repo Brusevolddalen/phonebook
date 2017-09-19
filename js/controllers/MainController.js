@@ -22,9 +22,9 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
       $http.post("php/deleteContact.php", phone)
       .then(function(response) {
-        console.log(response);
+        console.log("should have deleted");
       }, function(response) {
-        console.log(response);
+        console.log("not deleted");
       });
 
       /*
