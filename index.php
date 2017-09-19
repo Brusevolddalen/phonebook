@@ -85,7 +85,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn waves-effect waves-light add-btn" value="Add" ng-click="addContact()">Add</button>
+        <!-- <button class="btn waves-effect waves-light add-btn" value="Add" ng-click="addContact()">Add</button> -->
+        <input type="button" class="btn waves-effect waves-light add-btn" value="Add" ng-click="addContact()">
       </div>
       </div>
     </form>
