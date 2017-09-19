@@ -10,7 +10,7 @@ if ($db->connect_error) {
 }
 else{
 
-  $phoneNumber = $_POST['phoneNumber'];
+  $phoneNumber = $_POST['phone'];
 
 
   $sql = "DELETE FROM Contacts WHERE phone = '$phoneNumber'";
