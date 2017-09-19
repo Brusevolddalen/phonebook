@@ -20,7 +20,7 @@ else{
 
     $firstname = preg_replace('/[^a-zA-Z ]/','',$request->firstname);
 		$lastname = preg_replace('/[^a-zA-Z ]/','',$request->lastname);
-		$email = preg_replace('/[^a-zA-Z ]/','',$request->email);
+		$email = $request->email;
     $phone = preg_replace('/[^0-9 ]/','',$request->phone);
 
 
