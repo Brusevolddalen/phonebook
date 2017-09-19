@@ -11,6 +11,8 @@ $(document).ready(function() {
     }
   );
 
-  $('.add-btn').modal('close');
+  $('.add-btn').on('click', function(event) {
+    $(".modal").modal('close');
+  });
 
 });
