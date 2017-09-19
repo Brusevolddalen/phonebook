@@ -35,7 +35,7 @@
       <div class="row">
         <div class="col-12">
           <div>
-            <button data-target="addContactModal" class="waves-effect waves-light btn" style="width:100%">Add Contact</button>
+            <a class="waves-effect waves-light btn modal-trigger" style="width:100%" href="#addContactModal">Add Contact</a>
           </div>
           <table class="striped">
             <thead class="grey">
@@ -62,7 +62,8 @@
 
   <div id="addContactModal" class="modal">
     <form action="php/addContact.php" method="post">
-      <h4>Add Item</h4>
+      <div id="editTableContainer" class="modal-content">
+      <h4>Add Contact</h4>
       <div class="row">
         <div class="input-field col s6 m6 l6">
           <input id="firstname" type="text" name="Contact[firstname]" class="validate">
@@ -83,6 +84,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn waves-effect waves-light start-btn" type="submit" name="action">Add</button>
+      </div>
       </div>
     </form>
   </div>
