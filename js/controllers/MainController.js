@@ -1,9 +1,10 @@
-app.controller('MainController', ['$scope', function($scope, $http){
+app.controller('MainController', ['$scope', function($scope, $http) {
 
-    $http.get("loadContacts.php")
-    .then(function (response) {$scope.contacts = response.data.records;});
+  $http.get('loadContacts.php').success(function(data) {
+    $scope.contacts = data;
+  });
 
-    console.log($scope.contacts);
+  console.log($scope.contacts);
 
   /*
   $scope.contacts = [
