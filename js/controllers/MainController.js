@@ -9,7 +9,8 @@ app.controller('MainController', ['$scope', function($scope, $http) {
 
     $scope.contacts = data;
 
-    console.log($scope.contacts);
+    console.log($scope.contacts[0]);
+
   });
 
 
