@@ -19,24 +19,35 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
       let row = $(this).closest("tr"); // Finds the closest row <tr>
       let tds = row.find("td"); // Finds all children <td> elements
       let phone = $(tds[2]).text();
-
       $http({
-        method: 'POST',
         url: 'php/deleteContact.php',
-        data: {
-          phoneNumber: phone
+        method: "POST",
+        data: 'phoneNumber=' + phone,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
         }
-
       }).then(function(response) {
-
         console.log(response.data);
 
-      }, function(response) {
-
-        console.log(response.data, response.status);
-
       });
+      /*
+            $http({
+              method: 'POST',
+              url: 'php/deleteContact.php',
+              data: {
+                phoneNumber: phone
+              }
 
+            }).then(function(response) {
+
+              console.log(response.data);
+
+            }, function(response) {
+
+              console.log(response.data, response.status);
+
+            });
+      */
       /*
             $http.post("php/deleteContact.php", JSON.stringify(phone))
             .then(function(response) {
