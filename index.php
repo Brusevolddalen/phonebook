@@ -43,7 +43,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Phonenumber</th>
-                <th>Email-adress</th>
+                <th>Email-address</th>
                 <th style="width:12%">Delete</th>
               </tr>
             </thead>
